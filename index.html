@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reta Final EEAR 2026 · Matriz Educação</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --teal:#1dc99e;--lime:#84d43c;--navy:#1a2e44;--navy2:#223758;
+  --grad:linear-gradient(90deg,#1dc99e,#84d43c);
+  --grad135:linear-gradient(135deg,#1dc99e,#84d43c);
+  --white:#fff;--bg:#f5fefb;--card:#fff;
+  --t1:#0d1f2e;--t2:#2a3f54;--t3:#6b8ea6;
+  --border:#b8e8d0;--gbg:#edf9f3;
+  --red:#e53e3e;--amber:#d97706;--green:#16a34a;
+}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t1);min-height:100vh}
+.hdr{background:linear-gradient(135deg,#0b1a2b 0%,var(--navy) 55%,#1c3560 100%);padding:24px 20px 20px;position:relative;overflow:hidden}
+.hdr::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(29,201,158,.18) 0%,transparent 70%)}
+.hdr-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;gap:18px;flex-wrap:wrap;position:relative}
+.hdr-logo{width:58px;height:58px;border-radius:14px;object-fit:cover;box-shadow:0 4px 20px rgba(0,0,0,.4),0 0 0 2px rgba(29,201,158,.35);flex-shrink:0}
+.hdr-text{flex:1;min-width:160px}
+.hdr-brand{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:3px}
+.hdr-title{font-size:24px;font-weight:900;color:#fff;line-height:1.1;letter-spacing:.3px}
+.hdr-save{font-size:11px;color:rgba(255,255,255,.45);margin-top:4px;display:flex;align-items:center;gap:4px}
+.save-dot{width:6px;height:6px;background:var(--teal);border-radius:50%;display:inline-block;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hdr-chips{display:flex;gap:10px;flex-wrap:wrap;margin-left:auto}
+.hdr-chip{background:rgba(255,255,255,.07);border:1.5px solid rgba(29,201,158,.3);border-radius:12px;padding:8px 14px;text-align:center;min-width:110px}
+.hdr-chip-lbl{font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:3px}
+.hdr-chip-num{font-size:22px;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.hdr-chip-sub{font-size:10px;color:rgba(255,255,255,.4);margin-top:1px}
+.hdr-chip.urgent .hdr-chip-num{background:none;-webkit-text-fill-color:#f87171;color:#f87171}
+.tabs{background:#fff;border-bottom:2px solid #d4f0e3;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(26,46,68,.08)}
+.tabs-inner{max-width:960px;margin:0 auto;display:flex;padding:0 12px;overflow-x:auto}
+.tab{background:none;border:none;font-size:14px;font-weight:700;color:var(--t3);padding:15px 22px;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:all .2s;letter-spacing:.2px}
+.tab:hover{color:var(--navy)}
+.tab.active{color:var(--navy);border-bottom-color:var(--teal)}
+.main{max-width:960px;margin:0 auto;padding:20px 14px 80px}
+.card{background:#fff;border:1px solid var(--border);border-radius:16px;box-shadow:0 2px 18px rgba(13,31,46,.07);margin-bottom:18px;overflow:hidden}
+.card-h{display:flex;align-items:center;gap:10px;padding:14px 20px;background:var(--gbg);border-bottom:1.5px solid var(--border)}
+.card-h-bar{width:4px;height:22px;background:var(--grad);border-radius:2px;flex-shrink:0}
+.card-h h2{font-size:15px;font-weight:800;color:var(--navy);flex:1}
+.card-h .ico{font-size:18px}
+.card-b{padding:20px}
+.card-b p.src{font-size:11.5px;color:var(--t3);margin-bottom:14px}
+.ind-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+.ind-item{background:#fff;border:1.5px solid var(--border);border-radius:13px;padding:14px 16px;text-align:center;transition:box-shadow .2s}
+.ind-item:hover{box-shadow:0 4px 16px rgba(29,201,158,.15)}
+.ind-num{font-size:30px;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.ind-lbl{font-size:11px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+.ind-sub{font-size:12px;color:var(--t2);margin-top:3px;font-weight:600}
+.ind-prog{height:5px;background:#ddf0e8;border-radius:3px;margin-top:8px;overflow:hidden}
+.ind-prog-fill{height:100%;background:var(--grad);border-radius:3px;transition:width .6s ease}
+.sem-atual-badge{display:inline-flex;align-items:center;gap:6px;background:var(--grad);color:#fff;font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px;margin-bottom:14px;letter-spacing:.2px}
+.week-list{display:flex;flex-direction:column;gap:10px}
+.wk{border:1.5px solid var(--border);border-radius:14px;overflow:hidden;background:#fff;transition:box-shadow .2s}
+.wk.current{border-color:var(--teal);box-shadow:0 0 0 3px rgba(29,201,158,.13)}
+.wk.past{opacity:.65}
+.wk-hdr{display:flex;align-items:center;gap:12px;padding:13px 16px;background:var(--gbg);cursor:pointer;user-select:none;transition:background .15s}
+.wk-hdr:hover{background:#e0f5ec}
+.wk-num{width:36px;height:36px;border-radius:50%;background:var(--navy);color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.wk.current .wk-num{background:var(--grad);box-shadow:0 2px 10px rgba(29,201,158,.4)}
+.wk.past .wk-num{background:#a0bac8}
+.wk-info{flex:1;min-width:0}
+.wk-title{font-size:14px;font-weight:700;color:var(--t1);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.wk-foco{font-size:11.5px;color:var(--t3);margin-top:2px}
+.wk-meta{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.wk-tag{font-size:11px;font-weight:700;padding:3px 10px;border-radius:10px}
+.tag-now{background:rgba(29,201,158,.18);color:#0a7a5a}
+.tag-fut{background:#e8f5e9;color:#2e7d32}
+.tag-old{background:#f1f5f9;color:var(--t3)}
+.wk-arrow{font-size:12px;color:var(--t3);transition:transform .2s}
+.wk.open .wk-arrow,.wk.current .wk-arrow{transform:rotate(180deg)}
+.wk-body{display:none;padding:0 16px 14px}
+.wk.open .wk-body,.wk.current .wk-body{display:block}
+.task-list{list-style:none;display:flex;flex-direction:column;gap:6px;margin-top:12px}
+.task{display:flex;align-items:flex-start;gap:10px;padding:9px 12px;border-radius:9px;background:#f7fdfb;border:1px solid #d8f0e6;transition:background .15s}
+.task:hover{background:#eefaf4}
+.task input[type=checkbox]{width:17px;height:17px;accent-color:var(--teal);flex-shrink:0;margin-top:1px;cursor:pointer}
+.task label{flex:1;font-size:13px;color:var(--t1);cursor:pointer;line-height:1.5}
+.task input:checked ~ label{color:var(--t3);text-decoration:line-through}
+.task.done{background:#f0fdf7;border-color:#bbe8d4}
+.pri{font-size:10px;font-weight:700;padding:2px 8px;border-radius:8px;flex-shrink:0;align-self:center}
+.pri-a{background:#fee2e2;color:#b91c1c}
+.pri-m{background:#fef3c7;color:#92400e}
+.pri-b{background:#d1fae5;color:#065f46}
+.wk-prog{height:4px;background:#ddf0e8;border-radius:2px;margin-top:12px;overflow:hidden}
+.wk-prog-fill{height:100%;background:var(--grad);border-radius:2px;transition:width .4s}
+.cd-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px}
+.cd-item{background:linear-gradient(135deg,var(--navy),var(--navy2));border:1px solid rgba(29,201,158,.2);border-radius:13px;padding:18px 14px;text-align:center;color:#fff}
+.cd-item.urgent{background:linear-gradient(135deg,#7f1d1d,#991b1b)}
+.cd-item.safe{background:linear-gradient(135deg,#0a4a32,#0d5c3e)}
+.cd-num{font-size:36px;font-weight:900;line-height:1;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.cd-item.urgent .cd-num,.cd-item.safe .cd-num{background:none;-webkit-text-fill-color:#fff}
+.cd-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+.cd-sub{font-size:10px;color:rgba(255,255,255,.35);margin-top:2px}
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.info-item{background:var(--gbg);border:1.5px solid var(--border);border-radius:11px;padding:13px 15px;border-left:3px solid var(--teal)}
+.info-lbl{font-size:10px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.6px;margin-bottom:5px}
+.info-val{font-size:14px;font-weight:800;color:var(--navy);line-height:1.3}
+.info-hint{font-size:11px;color:var(--t3);margin-top:3px}
+.provas-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.prova-card{background:#fff;border:1.5px solid var(--border);border-radius:13px;padding:14px 16px;border-top:3px solid var(--teal);transition:box-shadow .2s,transform .2s}
+.prova-card:hover{box-shadow:0 6px 20px rgba(29,201,158,.15);transform:translateY(-2px)}
+.prova-year{font-size:20px;font-weight:900;color:var(--navy);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.prova-badge{font-size:10px;font-weight:700;background:var(--grad);color:#fff;padding:2px 9px;border-radius:8px}
+.prova-btns{display:flex;flex-direction:column;gap:6px}
+.prova-btn{display:flex;align-items:center;gap:8px;padding:9px 13px;border-radius:9px;font-size:13px;font-weight:600;cursor:pointer;border:none;width:100%;transition:all .2s;text-align:left}
+.prova-btn:hover{transform:translateY(-1px);filter:brightness(1.1)}
+.btn-un{background:var(--navy);color:#fff}
+.topics-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;align-items:start}
+.topic-card{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:13px 14px;border-top:3px solid var(--lime);height:auto}
+.topic-card-wide{grid-column:1 / -1}
+.topic-subj{font-size:13px;font-weight:800;color:var(--navy);margin-bottom:9px;display:flex;align-items:center;gap:6px}
+.topic-items{list-style:none;display:flex;flex-direction:column;gap:5px}
+.topic-items li{font-size:12px;color:var(--t2);display:flex;align-items:flex-start;gap:6px;line-height:1.4}
+.topic-items li::before{content:'▸';color:var(--teal);font-size:11px;flex-shrink:0;margin-top:1px}
+.topic-items li.hot::before{content:'🔥';font-size:10px}
+.tips-list{display:flex;flex-direction:column;gap:10px}
+.tip{display:flex;gap:13px;align-items:flex-start;padding:14px 16px;background:#fff;border:1px solid var(--border);border-radius:12px;border-left:4px solid var(--teal);transition:box-shadow .2s}
+.tip:hover{box-shadow:0 3px 14px rgba(29,201,158,.13)}
+.tip-ico{font-size:22px;flex-shrink:0;margin-top:1px}
+.tip strong{font-size:13px;font-weight:700;color:var(--navy);display:block;margin-bottom:3px}
+.tip p{font-size:12.5px;color:var(--t2);line-height:1.55}
+.toast{position:fixed;bottom:24px;right:20px;background:var(--grad);color:#fff;font-size:13px;font-weight:700;padding:11px 20px;border-radius:30px;box-shadow:0 4px 20px rgba(29,201,158,.4);z-index:9999;transition:opacity .3s,transform .3s;pointer-events:none}
+.toast.hide{opacity:0;transform:translateY(10px)}
+.hidden{display:none!important}
+@media(max-width:580px){
+  .hdr-chips{width:100%}
+  .hdr-chip{flex:1}
+  .tab{padding:13px 14px;font-size:13px}
+  .provas-grid{grid-template-columns:1fr 1fr}
+  .topics-grid{grid-template-columns:1fr 1fr}
+  .ind-grid{grid-template-columns:repeat(2,1fr)}
+  .hdr-title{font-size:20px}
+}
+.mo-ov{position:fixed;inset:0;background:rgba(10,20,30,.8);backdrop-filter:blur(5px);z-index:999;display:flex;align-items:center;justify-content:center;padding:16px}
+.mo-box{background:#fff;border-radius:20px;padding:28px 30px;max-width:440px;width:100%;box-shadow:0 24px 60px rgba(0,0,0,.4)}
+.mo-title{font-size:19px;font-weight:900;color:var(--navy);margin-bottom:5px}
+.mo-sub{font-size:13px;color:var(--t3);margin-bottom:20px;line-height:1.5}
+.mo-field{margin-bottom:13px}
+.mo-lbl{font-size:11px;font-weight:700;color:var(--t2);text-transform:uppercase;letter-spacing:.8px;margin-bottom:5px;display:block}
+.mo-inp,.mo-sel{width:100%;padding:10px 13px;border:2px solid var(--border);border-radius:10px;font-size:14px;color:var(--t1);outline:none;transition:border-color .2s;font-family:inherit;background:#fff}
+.mo-inp:focus,.mo-sel:focus{border-color:var(--teal)}
+.mo-btn{width:100%;padding:12px;background:var(--grad);color:#fff;border:none;border-radius:11px;font-size:14px;font-weight:700;cursor:pointer;margin-top:6px;font-family:inherit}
+.mo-btn:hover{opacity:.88}
+.mo-btn-sec{background:#f0f4f8;color:var(--t2)!important}
+.t-exam{font-size:14px;font-weight:700;color:var(--teal);margin-bottom:14px;text-align:center}
+.t-wrap{text-align:center;padding:10px 0 6px}
+.t-num{font-size:62px;font-weight:900;color:var(--navy);letter-spacing:3px;font-variant-numeric:tabular-nums;line-height:1}
+.t-lbl{font-size:11px;color:var(--t3);font-weight:600;text-transform:uppercase;letter-spacing:.8px;margin-top:6px}
+.t-warn{color:var(--red)!important;animation:blink .8s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.t-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px}
+.t-grid button{padding:11px;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;border:2px solid transparent;transition:opacity .2s;font-family:inherit}
+.t-grid button:hover{opacity:.85}
+.tbtn-go{background:var(--grad);color:#fff}
+.tbtn-pdf{background:#edf9f3;color:var(--teal);border-color:rgba(29,201,158,.4)!important}
+.tbtn-rst{background:#f5f7fa;color:var(--t2)}
+.tbtn-ok{background:#16a34a;color:#fff}
+.stu-chip{background:rgba(29,201,158,.13);border:1px solid rgba(29,201,158,.32);border-radius:20px;padding:6px 13px;font-size:12px;color:rgba(255,255,255,.9);cursor:pointer;display:flex;align-items:center;gap:6px;white-space:nowrap;transition:background .2s;font-family:inherit}
+.stu-chip:hover{background:rgba(29,201,158,.22)}
+.stu-dot{width:7px;height:7px;background:var(--teal);border-radius:50%;flex-shrink:0}
+.rk-hdr-btn{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:20px;padding:6px 14px;font-size:12px;color:rgba(255,255,255,.9);cursor:pointer;white-space:nowrap;font-weight:700;transition:background .2s;font-family:inherit}
+.rk-hdr-btn:hover{background:rgba(255,255,255,.18)}
+.rk-table{width:100%;border-collapse:collapse;font-size:13px}
+.rk-table th{background:var(--navy);color:#fff;padding:9px 12px;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:.8px}
+.rk-table th:first-child{border-radius:10px 0 0 0}
+.rk-table th:last-child{border-radius:0 10px 0 0}
+.rk-table td{padding:9px 12px;border-bottom:1px solid var(--border)}
+.rk-table tr:last-child td{border-bottom:none}
+.rk-table tr:nth-child(even) td{background:#f7fdfb}
+.rk-me td{background:#edf9f3!important;font-weight:700}
+.rk-prog{height:5px;background:#e5f5ee;border-radius:3px;margin-top:4px}
+.rk-prog-bar{height:100%;background:var(--grad);border-radius:3px}
+.rk-empty{text-align:center;padding:40px 20px;color:var(--t3);font-size:14px}
+.rk-note{background:#fff8e1;border:1px solid #fde68a;border-radius:10px;padding:12px 14px;font-size:12px;color:#92400e;margin-top:14px;line-height:1.6}
+.posto-card{background:linear-gradient(135deg,var(--navy),#1c3560);border-radius:16px;padding:22px 24px;color:#fff;margin-bottom:18px;position:relative;overflow:hidden}
+.posto-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 80% 50%,rgba(29,201,158,.15) 0%,transparent 70%)}
+.posto-inner{position:relative}
+.posto-cat{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:6px}
+.posto-nome{font-size:26px;font-weight:900;color:#fff;line-height:1.1;margin-bottom:12px}
+.posto-xp-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.posto-xp-val{font-size:13px;font-weight:700;color:rgba(255,255,255,.8)}
+.posto-xp-bar{height:8px;background:rgba(255,255,255,.15);border-radius:4px;overflow:hidden;margin-bottom:4px}
+.posto-xp-fill{height:100%;background:var(--grad);border-radius:4px;transition:width .6s ease}
+.posto-xp-next{font-size:11px;color:rgba(255,255,255,.4)}
+.posto-badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.posto-badge{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:8px 13px;text-align:center}
+.posto-badge-num{font-size:20px;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.posto-badge-lbl{font-size:10px;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.5px}
+.st-wrap{text-align:center;padding:8px 0 4px}
+.st-num{font-size:52px;font-weight:900;color:var(--navy);letter-spacing:3px;font-variant-numeric:tabular-nums;line-height:1}
+.st-lbl{font-size:11px;color:var(--t3);font-weight:600;text-transform:uppercase;letter-spacing:.8px;margin-top:4px}
+.st-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+.st-grid button{padding:10px;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;border:none;font-family:inherit;transition:opacity .2s}
+.st-grid button:hover{opacity:.85}
+.stbtn-go{background:var(--grad);color:#fff}
+.stbtn-rst{background:#f5f7fa;color:var(--t2)}
+.stbtn-save{background:var(--navy);color:#fff;grid-column:1/-1}
+.st-total{font-size:12px;color:var(--t3);text-align:center;margin-top:8px}
+.rk-posto-table{width:100%;border-collapse:collapse;font-size:13px}
+.rk-posto-table th{background:var(--navy);color:#fff;padding:9px 14px;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:.8px}
+.rk-posto-table th:first-child{border-radius:10px 0 0 0}
+.rk-posto-table th:last-child{border-radius:0 10px 0 0}
+.rk-posto-table td{padding:9px 14px;border-bottom:1px solid var(--border);font-size:12px}
+.rk-posto-table tr:last-child td{border-bottom:none}
+.rk-posto-table tr.rk-cat td{background:var(--gbg);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--t3);padding:6px 14px}
+.rk-posto-table tr.rk-cur td{background:#edf9f3!important;font-weight:700;color:var(--navy)}
+.curr-subj{margin-bottom:10px;border:1.5px solid var(--border);border-radius:12px;overflow:hidden}
+.curr-subj-hdr{display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--gbg);cursor:pointer;user-select:none;transition:background .15s}
+.curr-subj-hdr:hover{background:#e0f5ec}
+.curr-subj-title{flex:1;font-size:14px;font-weight:700;color:var(--navy)}
+.curr-subj-prog{font-size:12px;color:var(--teal);font-weight:700}
+.curr-subj-arrow{font-size:12px;color:var(--t3);transition:transform .2s}
+.curr-subj.open .curr-subj-arrow{transform:rotate(180deg)}
+.curr-subj-body{display:none;padding:12px 16px}
+.curr-subj.open .curr-subj-body{display:block}
+.curr-items{list-style:none;display:flex;flex-direction:column;gap:5px}
+.curr-item{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;background:#f7fdfb;border:1px solid #d8f0e6}
+.curr-item input{width:16px;height:16px;accent-color:var(--teal);flex-shrink:0;cursor:pointer}
+.curr-item label{flex:1;font-size:12.5px;color:var(--t1);cursor:pointer;line-height:1.4}
+.curr-item.done label{color:var(--t3);text-decoration:line-through}
+.xp-pill{display:inline-flex;align-items:center;background:var(--grad);color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;flex-shrink:0}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="hdr-inner">
+    <img src="logo.jpg" class="hdr-logo" alt="Matriz">
+    <div class="hdr-text">
+      <div class="hdr-brand">Matriz Educação</div>
+      <div class="hdr-title">Reta Final EEAR 2026</div>
+      <div class="hdr-save"><span class="save-dot"></span> Progresso salvo automaticamente no navegador</div>
+    </div>
+    <div class="hdr-chips">
+      <div class="hdr-chip" id="chipEEAR">
+        <div class="hdr-chip-lbl">✈️ EEAR CFS-1</div>
+        <div class="hdr-chip-num" id="chipEEARnum">—</div>
+        <div class="hdr-chip-sub">dias · 31/05/2026</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:7px;align-items:flex-end;margin-left:auto">
+      <button class="rk-hdr-btn" onclick="openRanking()">🏆 Ranking</button>
+      <button class="stu-chip" id="stuChip" onclick="editStudent()" style="display:none"><span class="stu-dot"></span><span id="stuChipText"></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- TABS -->
+<nav class="tabs">
+  <div class="tabs-inner">
+    <button class="tab active" id="tabPlano"   onclick="setTab('plano')">🗓️ Plano Semanal</button>
+    <button class="tab"        id="tabEEAR"    onclick="setTab('eear')">✈️ EEAr</button>
+    <button class="tab"        id="tabRanking" onclick="setTab('ranking')">🎖️ Ranking</button>
+  </div>
+</nav>
+
+<main class="main">
+
+<!-- ══════════ PLANO ══════════ -->
+<div id="tab-plano">
+
+  <div class="card">
+    <div class="card-h"><div class="card-h-bar"></div><span class="ico">📊</span><h2>Indicadores de Progresso</h2></div>
+    <div class="card-b"><div class="ind-grid" id="indGrid"></div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-h"><div class="card-h-bar"></div><span class="ico">🎯</span><h2>Metas da Semana</h2></div>
+    <div class="card-b" id="metasContainer"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-h"><div class="card-h-bar"></div><span class="ico">📅</span><h2>Plano Semanal — EEAR CFS-1</h2></div>
+    <div class="card-b">
+      <div id="semAtualBadge"></div>
+      <div class="week-list" id="weeksGeral"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-h"><div class="card-h-bar"></div><span class="ico">🧠</span><h2>Estratégias de Estudo — Manual do Classificado</h2></div>
+    <div class="card-b">
+      <div class="tips-list">
+        <div class="tip"><span class="tip-ico">📄</span><div><strong>Resolver todas as provas anteriores</strong><p>Principalmente os últimos 5 anos (CFS-1 2021–2025). Estudar a prova é estudar a banca: padrão de enunciado, nível de dificuldade, tópicos que se repetem. É a atividade com maior retorno de tempo investido.</p></div></div>
+        <div class="tip"><span class="tip-ico">🔥</span><div><strong>Foco em Sintaxe e Funções Matemáticas</strong><p>Sintaxe domina ~30% da prova de Português. Funções (1º, 2º grau, exponencial, logarítmica) são o coração da Matemática da EEAR. Domine esses dois pilares e já sai na frente da maioria.</p></div></div>
+        <div class="tip"><span class="tip-ico">⚡</span><div><strong>Física: integre cinemática, dinâmica e eletricidade</strong><p>A EEAR mistura conceitos — uma questão pode exigir cinemática + energia + força. Não basta decorar fórmula: entenda o fenômeno físico por trás de cada equação.</p></div></div>
+        <div class="tip"><span class="tip-ico">🌐</span><div><strong>BCT: Conditionals e Passive Voice são obrigatórios</strong><p>Se você está concorrendo a BCT (Controle de Tráfego Aéreo), os Conditionals (0, 1º, 2º e 3º) e a Voz Passiva são diferenciais decisivos que o nível básico não exige.</p></div></div>
+        <div class="tip"><span class="tip-ico">📝</span><div><strong>Realizar todos os simulados com cronômetro</strong><p>A prova CFS-1 tem duração definida. Treinar com cronômetro desde já evita o choque de ritmo no dia da prova e melhora a gestão de tempo por questão.</p></div></div>
+        <div class="tip"><span class="tip-ico">🔍</span><div><strong>Corrigir com foco nos erros conceituais</strong><p>Não basta ver o gabarito. Para cada erro pergunte: foi conceito, distração ou falta de prática? Anote numa tabela e revise na semana seguinte.</p></div></div>
+        <div class="tip"><span class="tip-ico">📦</span><div><strong>Véspera: kit e logística</strong><p>Identidade/RG, caneta azul ou preta, lanche e água. Confirme o endereço, durma 8h e chegue 30–40 min antes. Tranquilidade na chegada vale pontos.</p></div></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- #tab-plano -->
+
+
+<!-- ══════════ EEAr ══════════ -->
+<div id="tab-eear" class="hidden">
+
+  <div class="card">
+    <div class="card-h"><div class="card-h-bar"></div><span class="ico">⏳</span><h2>Contagem Regressiva — EEAR CFS-1 2026</h2></div>
+    <div class="card-b">
+      <div style="background:linear-gradient(135deg,var(--navy),var(--navy2));border-radius:12px;padding:13px 18px;text-align:center;margin-bottom:14px;border:1px solid rgba(29,201,158,.2)">
+        <div style="font-size:10px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px">31/05/2026 — Dia Único</div>
+        <div style="font-size:13px;font-weight:600;color:rgba(255,255,255,.75)">Língua Portuguesa · Língua Inglesa · Matemática · Física</div>
+      </div>
+      <div class="cd-grid" id="cdEEAR"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-h"><div class="card-h-bar"></div><span class="ico">📋</span><h2>Formato do Exame — EEAR CFS-1</h2></div>
+    <div class="card-b">
+      <div class="info-grid">
+        <div class="info-item"><div class="info-lbl">Matérias</div><div class="info-val">Port. · Inglês · Mat. · Física</div><div class="info-hint">4 disciplinas</div></div>
+        <div class="info-item"><div class="info-lbl">Formato</div><div class="info-val">Questões Objetivas</div><div class="info-hint">Múltipla escolha</div></div>
+        <div class="info-item"><div class="info-lbl">Data</div><div class="info-val">31/05/2026</div><div class="info-hint">Dia único</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-h"><div class="card-h-bar"></div><span class="ico">🔥</span><h2>Tópicos que Mais Caem — EEAR CFS-1</h2></div>
+    <div class="card-b">
+      <div class="topics-grid">
+        <div class="topic-card"><div class="topic-subj">📖 Língua Portuguesa</div><ul class="topic-items">
+          <li class="hot">Sintaxe: oração e período (coord. e subord.)</li>
+          <li class="hot">Concordância Verbal e Nominal</li>
+          <li class="hot">Interpretação de textos (literários, mistos)</li>
+          <li>Regência, crase e colocação pronominal</li>
+          <li>Figuras de linguagem</li>
+          <li>Morfologia e classes de palavras</li>
+          <li>Semântica: sinônimos, antônimos, parônimos</li>
+          <li>Pontuação e tipos de discurso</li></ul></div>
+        <div class="topic-card"><div class="topic-subj">📐 Matemática</div><ul class="topic-items">
+          <li class="hot">Funções do 1º e 2º grau (gráficos e vértice)</li>
+          <li class="hot">Geometria Analítica: Elipse e Hipérbole</li>
+          <li class="hot">Geometria Espacial: volumes e áreas</li>
+          <li>PA e PG</li>
+          <li>Probabilidade e Combinatória</li>
+          <li>Trigonometria</li>
+          <li>Estatística: médias e desvio</li>
+          <li>Números Complexos e Polinômios</li></ul></div>
+        <div class="topic-card"><div class="topic-subj">⚡ Física</div><ul class="topic-items">
+          <li class="hot">Cinemática + Dinâmica integradas</li>
+          <li class="hot">Eletrodinâmica e circuitos elétricos</li>
+          <li class="hot">Termodinâmica: máquinas e 2ª Lei</li>
+          <li>Óptica geométrica</li>
+          <li>Hidrostática e Estática</li>
+          <li>Ondulatória</li>
+          <li>Eletromagnetismo</li></ul></div>
+        <div class="topic-card"><div class="topic-subj">🌐 Inglês</div><ul class="topic-items">
+          <li class="hot">Compreensão de texto</li>
+          <li class="hot">Tempos verbais (Simple/Continuous/Perfect/Future)</li>
+          <li class="hot">Conditional Sentences (0, 1º, 2º e 3º)</li>
+          <li class="hot">Active/Passive Voice</li>
+          <li>Modal Verbs: Can, Could, May, Must, Should</li>
+          <li>Reported Speech</li>
+          <li>Phrasal Verbs e Idioms</li>
+          <li>Pronomes e advérbios</li>
+          <li>False Friends e Word Formation</li>
+          <li>Relative Clauses e Question Tags</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-h"><div class="card-h-bar"></div><span class="ico">🎯</span><h2>Meta: 480 Questões · 80% de Aproveitamento</h2></div>
+    <div class="card-b">
+      <div class="ind-grid" id="questoesGrid"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-h"><div class="card-h-bar"></div><span class="ico">📄</span><h2>Provas Anteriores — EEAR CFS-1 2021–2025</h2></div>
+    <div class="card-b">
+      <div class="provas-grid" id="provasGrid"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-h"><div class="card-h-bar"></div><span class="ico">📋</span><h2>Planejamento EEAR · +15 XP por tópico</h2></div>
+    <div class="card-b"><div id="eearCurrContainer"></div></div>
+  </div>
+
+</div><!-- #tab-eear -->
+
+
+<!-- ══════════ RANKING ══════════ -->
+<div id="tab-ranking" class="hidden">
+
+  <div id="postoCard"></div>
+
+  <div class="card">
+    <div class="card-h"><div class="card-h-bar"></div><span class="ico">🏆</span><h2>Ranking dos Alunos</h2></div>
+    <div class="card-b">
+      <div id="rkTabContent"><div class="rk-empty">Carregando...</div></div>
+      <div style="text-align:center;margin-top:12px">
+        <button class="mo-btn mo-btn-sec" style="width:auto;padding:9px 20px;font-size:13px" onclick="loadRankingTab()">↻ Atualizar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-h"><div class="card-h-bar"></div><span class="ico">⏱️</span><h2>Cronômetro de Estudos</h2></div>
+    <div class="card-b">
+      <div class="st-wrap">
+        <div class="st-num" id="stDisplay">00:00:00</div>
+        <div class="st-lbl">tempo na sessão atual</div>
+      </div>
+      <div class="st-grid">
+        <button class="stbtn-go" id="stBtnGo" onclick="stToggle()">▶ Iniciar</button>
+        <button class="stbtn-rst" onclick="stReset()">↺ Resetar</button>
+        <button class="stbtn-save" onclick="stSave()">💾 Salvar horas de estudo (+20 XP por hora)</button>
+      </div>
+      <div class="st-total">Total acumulado: <strong id="stTotalHours">0.0 h</strong></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-h"><div class="card-h-bar"></div><span class="ico">⭐</span><h2>Como ganhar XP</h2></div>
+    <div class="card-b">
+      <div class="ind-grid">
+        <div class="ind-item"><div class="ind-num">+10</div><div class="ind-lbl">XP / tarefa</div><div class="ind-sub">Plano semanal</div></div>
+        <div class="ind-item"><div class="ind-num">+50</div><div class="ind-lbl">XP / prova</div><div class="ind-sub">Simulado concluído</div></div>
+        <div class="ind-item"><div class="ind-num">+20</div><div class="ind-lbl">XP / hora</div><div class="ind-sub">Cronômetro salvo</div></div>
+        <div class="ind-item"><div class="ind-num">+15</div><div class="ind-lbl">XP / tópico</div><div class="ind-sub">Currículo EEAR</div></div>
+        <div class="ind-item"><div class="ind-num">+20</div><div class="ind-lbl">XP / meta</div><div class="ind-sub">Meta semanal</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-h"><div class="card-h-bar"></div><span class="ico">🪖</span><h2>Postos — Aluno da EEAR → Suboficial</h2></div>
+    <div class="card-b">
+      <div class="rk-note" style="margin-bottom:14px">Você começa como <strong>Aluno da EEAR</strong> e sobe de posto conforme acumula XP ao longo dos estudos.</div>
+      <div id="rankTableContent"></div>
+    </div>
+  </div>
+
+</div><!-- #tab-ranking -->
+
+</main>
+
+<div class="toast hide" id="toast">✓ Progresso salvo</div>
+
+<!-- MODAIS -->
+<div id="moSetup" class="mo-ov" style="display:none">
+  <div class="mo-box">
+    <div class="mo-title">Bem-vindo à Reta Final EEAR!</div>
+    <div class="mo-sub">Insira seus dados para salvar progresso e participar do ranking.</div>
+    <div class="mo-field">
+      <label class="mo-lbl" for="inpNome">Seu nome</label>
+      <input class="mo-inp" id="inpNome" placeholder="Ex: João Pedro" maxlength="40">
+    </div>
+    <div class="mo-field">
+      <label class="mo-lbl" for="inpUnidade">Unidade</label>
+      <select class="mo-sel" id="inpUnidade">
+        <option value="">Selecione...</option>
+        <option>Bangu</option>
+        <option>Campo Grande</option>
+        <option>Duque de Caxias</option>
+        <option>Madureira</option>
+        <option>Nova Iguaçu</option>
+        <option>Retiro dos Artistas</option>
+        <option>Rocha Miranda</option>
+        <option>São João de Meriti</option>
+        <option>Taquara</option>
+        <option>Tijuca</option>
+      </select>
+    </div>
+    <button class="mo-btn" onclick="saveStudent()">Salvar e Continuar</button>
+  </div>
+</div>
+
+<div id="moTimer" class="mo-ov" style="display:none">
+  <div class="mo-box">
+    <div class="t-exam" id="tExamTitle">Simulado EEAR</div>
+    <div class="t-wrap">
+      <div class="t-num" id="tDisplay">00:00:00</div>
+      <div class="t-lbl" id="tLabel">Tempo disponível</div>
+    </div>
+    <div class="t-grid">
+      <button class="tbtn-go" id="tBtnGo" onclick="timerToggle()">▶ Iniciar</button>
+      <button class="tbtn-pdf" onclick="timerOpenPDF()">📄 Abrir Prova</button>
+      <button class="tbtn-rst" onclick="timerReset()">↺ Reiniciar</button>
+      <button class="tbtn-ok" onclick="timerDone()">✓ Conclui</button>
+    </div>
+    <div style="text-align:center;margin-top:14px">
+      <button onclick="closeTimer()" style="background:none;border:none;color:var(--t3);font-size:12px;cursor:pointer;font-family:inherit">Fechar sem concluir</button>
+    </div>
+  </div>
+</div>
+
+<div id="moRanking" class="mo-ov" style="display:none" onclick="if(event.target===this)closeRanking()">
+  <div class="mo-box" style="max-width:580px">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
+      <div class="mo-title">🏆 Ranking — EEAR 2026</div>
+      <button onclick="closeRanking()" style="background:none;border:none;font-size:22px;cursor:pointer;color:var(--t3);line-height:1">×</button>
+    </div>
+    <div id="rkContent"><div class="rk-empty">Carregando...</div></div>
+    <div style="text-align:center;margin-top:14px;display:flex;gap:8px;justify-content:center">
+      <button class="mo-btn mo-btn-sec" style="width:auto;padding:9px 20px;font-size:13px" onclick="loadRanking()">↻ Atualizar</button>
+      <button class="mo-btn mo-btn-sec" style="width:auto;padding:9px 20px;font-size:13px" onclick="editStudent()">✎ Editar dados</button>
+    </div>
+  </div>
+</div>
+
+<div id="moQuestoes" class="mo-ov" style="display:none">
+  <div class="mo-box">
+    <div class="mo-title">📝 Resultado da Prova</div>
+    <div class="mo-sub" id="moQSub">Quantas questões você acertou?</div>
+    <div class="mo-field">
+      <label class="mo-lbl" for="inpAcertos">Questões acertadas (de <span id="inpAcertosTotal">96</span>)</label>
+      <input class="mo-inp" id="inpAcertos" type="number" min="0" max="96" placeholder="Ex: 78" oninput="calcAcertosLive()">
+    </div>
+    <div id="moQResult" style="min-height:32px;margin:10px 0;font-size:14px;font-weight:700;text-align:center;border-radius:10px;padding:8px 12px"></div>
+    <button class="mo-btn" onclick="saveQuestoes()">💾 Salvar Resultado (+50 XP)</button>
+    <button class="mo-btn mo-btn-sec" style="margin-top:8px" onclick="skipQuestoes()">Pular — não registrar acertos</button>
+  </div>
+</div>
+
+<div id="moStudySubj" class="mo-ov" style="display:none" onclick="if(event.target===this)this.style.display='none'">
+  <div class="mo-box">
+    <div class="mo-title">📚 O que você estudou?</div>
+    <div class="mo-sub">Selecione a matéria da sessão de estudo.</div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <button class="mo-btn" onclick="stSaveConfirm('Língua Portuguesa')">📖 Língua Portuguesa</button>
+      <button class="mo-btn" onclick="stSaveConfirm('Matemática')">📐 Matemática</button>
+      <button class="mo-btn" onclick="stSaveConfirm('Física')">⚡ Física</button>
+      <button class="mo-btn" onclick="stSaveConfirm('Inglês Básico')">🌐 Inglês — Nível Básico</button>
+      <button class="mo-btn" onclick="stSaveConfirm('Inglês BCT')">🛫 Inglês — BCT (Intermediário)</button>
+      <button class="mo-btn" onclick="stSaveConfirm('Revisão Geral')">🔄 Revisão Geral</button>
+      <button class="mo-btn mo-btn-sec" onclick="document.getElementById('moStudySubj').style.display='none'">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── CONSTANTES ────────────────────────────────────────
+const D_EEAR = new Date('2026-05-31T08:00:00');
+const QUESTOES_POR_PROVA = 96;
+const TOTAL_QUESTOES     = 480; // 5 provas × 96
+const META_PCT           = 80;
+const PROVAS_LIST = [
+  {ano:'2025', badge:'Mais recente', file:'prova_cfs-1-2025_cod_62_29-07-2024-08-25-54.pdf'},
+  {ano:'2024', badge:null,           file:'prova_cfs 1 2024_cod_02_03 07 2023 10 13 02.pdf'},
+  {ano:'2023', badge:null,           file:'prova_cfs 1 2023_cod_81_28 06 2022 08 23 55.pdf'},
+  {ano:'2022', badge:null,           file:'prova_cfs 1 2022_cod_05_29 06 2021 14 54 26.pdf'},
+  {ano:'2021', badge:null,           file:'prova_cfs 1 2021_cod_33_05 10 2020 08 32 24_.pdf'},
+];
+
+// ── PLANO SEMANAL ─────────────────────────────────────
+const SEMANAS = [
+  {
+    n:3, titulo:'Diagnóstico + Português + Física Mecânica',
+    foco:'Prova 2025 · identificar fraquezas · sintaxe · cinemática e dinâmica',
+    tasks:[
+      {t:'✈️ Resolver prova EEAR CFS-1 2025 completa com cronômetro (5h)', p:'a'},
+      {t:'📊 Catalogar erros por matéria: % de acerto em cada disciplina', p:'a'},
+      {t:'📖 Português: Revisar Sintaxe — frase, oração, período, orações coord. e subord.', p:'a'},
+      {t:'📖 Português: Revisar Concordância Verbal e Nominal', p:'a'},
+      {t:'📖 Português: Revisar Interpretação de Textos (literários, não-literários, charges)', p:'m'},
+      {t:'⚡ Física: Revisar Cinemática — MU, MUV, lançamento e movimentos circulares', p:'a'},
+      {t:'⚡ Física: Revisar Dinâmica — Leis de Newton, trabalho e energia', p:'a'},
+      {t:'⚡ Física: Revisar Estática e Hidrostática', p:'m'},
+    ]
+  },
+  {
+    n:2, titulo:'Matemática + Inglês + Eletricidade',
+    foco:'Provas 2024 e 2023 · funções · tempos verbais · circuitos elétricos',
+    tasks:[
+      {t:'✈️ Resolver prova EEAR CFS-1 2024 completa com cronômetro', p:'a'},
+      {t:'✈️ Resolver prova EEAR CFS-1 2023 completa com cronômetro', p:'a'},
+      {t:'📐 Matemática: Revisar Funções (1º e 2º grau), função exponencial e logarítmica', p:'a'},
+      {t:'📐 Matemática: Revisar Geometria Espacial — áreas e volumes (prismas, pirâmide, cilindro, cone, esfera)', p:'a'},
+      {t:'📐 Matemática: Revisar Geometria Analítica — Elipse e Hipérbole', p:'a'},
+      {t:'📐 Matemática: Revisar Combinatória, Probabilidade e Estatística', p:'m'},
+      {t:'🌐 Inglês: Revisar tempos verbais e compreensão de texto', p:'a'},
+      {t:'🛫 Inglês BCT: Revisar Conditional Sentences (0, 1º, 2º e 3º) e Passive Voice', p:'m'},
+      {t:'⚡ Física: Revisar Eletrostática, Eletrodinâmica, Circuitos e Eletromagnetismo', p:'a'},
+      {t:'⚡ Física: Revisar Termologia e Termodinâmica (máquinas térmicas e 2ª Lei)', p:'a'},
+    ]
+  },
+  {
+    n:1, titulo:'Sprint Final + Véspera',
+    foco:'Provas 2022 e 2021 · revisão de erros · preparação logística',
+    tasks:[
+      {t:'✈️ Resolver prova EEAR CFS-1 2022 com cronômetro (foco nos pontos fracos)', p:'a'},
+      {t:'✈️ Resolver prova EEAR CFS-1 2021 com cronômetro', p:'m'},
+      {t:'📊 Refazer todas as questões que errou nas semanas anteriores', p:'a'},
+      {t:'📖 Português: Revisão final — Regência, Crase, Colocação Pronominal e Figuras de Linguagem', p:'a'},
+      {t:'📐 Matemática: Montar ficha de fórmulas completa (folha A4)', p:'a'},
+      {t:'⚡ Física: Revisar Ondulatória, Óptica Geométrica e Matéria e Radiação', p:'a'},
+      {t:'🌐 Inglês: Revisão final — Question Tags, Phrasal Verbs e False Friends', p:'m'},
+      {t:'📖 Revisão leve da ficha de fórmulas (máx. 30 min) — nada de conteúdo novo!', p:'a'},
+      {t:'📦 Preparar kit: RG/identidade, caneta preta ou azul, lápis, borracha, lanche, água', p:'a'},
+      {t:'😴 Dormir às 21h — mínimo 8h de sono antes da prova (31/05/2026)', p:'a'},
+    ]
+  }
+];
+
+// ── UTILITÁRIOS ───────────────────────────────────────
+var _tProvaAno='';
+function pdf(n,ano){
+  _tPDF=n; _tProvaAno=ano||'';
+  // check for saved running timer for this prova
+  var savedEnd=parseInt(localStorage.getItem('eerTEndAt')||0);
+  var savedAno=localStorage.getItem('eerTProva')||'';
+  var remaining=savedEnd?Math.ceil((savedEnd-Date.now())/1000):0;
+  if(savedAno===ano&&remaining>0){
+    _tSecs=remaining;
+    document.getElementById('tBtnGo').textContent='▶ Continuar';
+    document.getElementById('tLabel').textContent='Timer retomado — clique ▶ para continuar';
+  } else {
+    _tSecs=5*3600;
+    localStorage.removeItem('eerTEndAt');
+    document.getElementById('tBtnGo').textContent='▶ Iniciar';
+    document.getElementById('tLabel').textContent='Tempo disponível';
+  }
+  _tRunning=false; clearInterval(_tInt); _tInt=null;
+  localStorage.setItem('eerTProva',ano||'');
+  localStorage.setItem('eerTPDF',n);
+  document.getElementById('tExamTitle').textContent='EEAR CFS-1 '+(ano||'')+' · Prova Completa';
+  _updateTDisplay();
+  document.getElementById('moTimer').style.display='flex';
+}
+
+function setTab(t){
+  ['plano','eear','ranking'].forEach(function(id){
+    var el=document.getElementById('tab-'+id);if(el)el.classList.toggle('hidden',id!==t);
+  });
+  document.getElementById('tabPlano')?.classList.toggle('active',t==='plano');
+  document.getElementById('tabEEAR')?.classList.toggle('active',t==='eear');
+  document.getElementById('tabRanking')?.classList.toggle('active',t==='ranking');
+  if(t==='ranking')initRankingTab();
+  if(t==='eear'){renderCurriculum(EEAR_CURR,'ee','eearCurrContainer');renderProvaCards();renderQuestoesGrid();}
+}
+
+// ── COUNTDOWN ─────────────────────────────────────────
+function diasH(alvo){
+  var ms=new Date(alvo)-new Date();
+  if(ms<=0)return{d:0,h:0,m:0,total:0};
+  var d=Math.floor(ms/86400000),h=Math.floor((ms%86400000)/3600000),m=Math.floor((ms%3600000)/60000);
+  return{d,h,m,total:Math.ceil(ms/86400000)};
+}
+function buildCD(id,alvo){
+  var t=diasH(alvo),total=t.total;
+  var urgente=total<=7,seguro=total>=21;
+  var cls=urgente?'cd-item urgent':seguro?'cd-item safe':'cd-item';
+  var semanas=Math.ceil(total/7);
+  var el=document.getElementById(id);if(!el)return;
+  if(total<=0){el.innerHTML='<div class="'+cls+'" style="grid-column:1/-1"><div class="cd-num">🎯</div><div class="cd-lbl">Dia da Prova!</div></div>';return;}
+  el.innerHTML='<div class="'+cls+'"><div class="cd-num">'+total+'</div><div class="cd-lbl">Dias Restantes</div></div>'
+    +'<div class="'+cls+'"><div class="cd-num">'+semanas+'</div><div class="cd-lbl">Semanas</div></div>'
+    +(urgente?'<div class="cd-item urgent" style="grid-column:1/-1"><div class="cd-lbl" style="font-size:13px;color:#fca5a5">⚠️ ÚLTIMOS DIAS — reta final máxima!</div></div>':'');
+}
+function updateChips(){
+  var e=diasH(D_EEAR),ce=document.getElementById('chipEEARnum');
+  if(ce)ce.textContent=e.total>0?e.total:'🎯';
+  document.getElementById('chipEEAR')?.classList.toggle('urgent',e.total<=7);
+}
+function updateAll(){buildCD('cdEEAR',D_EEAR);updateChips();}
+
+// ── TOAST ─────────────────────────────────────────────
+var toastTimer;
+function showToast(msg){
+  msg=msg||'✓ Progresso salvo';
+  var t=document.getElementById('toast');
+  t.textContent=msg;t.classList.remove('hide');
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(function(){t.classList.add('hide');},2000);
+}
+
+// ── SEMANAS ───────────────────────────────────────────
+function diasRest(alvo){var ms=new Date(alvo)-new Date();return Math.max(0,Math.ceil(ms/86400000));}
+function semanasRest(){return Math.ceil(diasRest(D_EEAR)/7);}
+function taskId(n,i){return 'er-s'+n+'-t'+i;}
+
+function countTasks(){
+  var total=0,done=0,proP=0,proPD=0;
+  SEMANAS.forEach(function(s){s.tasks.forEach(function(t,i){
+    var id=taskId(s.n,i),ck=localStorage.getItem(id)==='1';
+    total++;if(ck)done++;
+    if(t.t.startsWith('✈️')){proP++;if(ck)proPD++;}
+  });});
+  return{total,done,proP,proPD};
+}
+
+function renderIndicadores(){
+  var c=countTasks(),q=countQuestoes();
+  var pct=c.total?Math.round(c.done/c.total*100):0;
+  var dias=diasRest(D_EEAR);
+  var pctQ=Math.round(q.resolvidas/TOTAL_QUESTOES*100);
+  var aprovPct=q.resolvidas?q.pct:0;
+  document.getElementById('indGrid').innerHTML=
+    '<div class="ind-item"><div class="ind-num">'+pct+'%</div><div class="ind-lbl">Conclusão Geral</div><div class="ind-sub">'+c.done+' / '+c.total+' tarefas</div><div class="ind-prog"><div class="ind-prog-fill" style="width:'+pct+'%"></div></div></div>'
+   +'<div class="ind-item"><div class="ind-num">'+q.resolvidas+'<span style="font-size:14px">/'+TOTAL_QUESTOES+'</span></div><div class="ind-lbl">Questões</div><div class="ind-sub">meta: '+TOTAL_QUESTOES+' questões</div><div class="ind-prog"><div class="ind-prog-fill" style="width:'+pctQ+'%"></div></div></div>'
+   +'<div class="ind-item"><div class="ind-num" style="'+(aprovPct>=META_PCT&&q.resolvidas?'color:var(--green)':q.resolvidas?'color:var(--red)':'')+'">'+(q.resolvidas?aprovPct+'%':'—')+'</div><div class="ind-lbl">Aproveitamento</div><div class="ind-sub">meta: ≥ '+META_PCT+'%</div></div>'
+   +'<div class="ind-item"><div class="ind-num">'+dias+'</div><div class="ind-lbl">Dias p/ EEAR</div><div class="ind-sub">31 / 05 / 2026</div></div>';
+}
+
+function renderSemanas(){
+  var semAtual=Math.min(3,Math.max(1,semanasRest()));
+  var badge=document.getElementById('semAtualBadge');
+  if(badge)badge.innerHTML='<div class="sem-atual-badge">📍 Você está na Semana '+semAtual+' de 3</div>';
+  var cont=document.getElementById('weeksGeral');
+  var html='';
+  var sorted=[
+    ...SEMANAS.filter(function(s){return s.n===semAtual;}),
+    ...SEMANAS.filter(function(s){return s.n<semAtual;}).sort(function(a,b){return b.n-a.n;}),
+    ...SEMANAS.filter(function(s){return s.n>semAtual;}).sort(function(a,b){return b.n-a.n;})
+  ];
+  sorted.forEach(function(s){
+    var isCur=s.n===semAtual||(semanasRest()>3&&s.n===3);
+    var isPast=s.n>semAtual&&!isCur;
+    var cls='wk'+(isCur?' current':'')+(isPast?' past':'');
+    var tag=isCur?'<span class="wk-tag tag-now">● Semana atual</span>':
+             isPast?'<span class="wk-tag tag-old">Concluída</span>':
+             '<span class="wk-tag tag-fut">Próxima</span>';
+    var ws=new Date(D_EEAR);ws.setDate(ws.getDate()-s.n*7);
+    var we=new Date(ws);we.setDate(we.getDate()+6);
+    var fmt=function(d){return d.toLocaleDateString('pt-BR',{day:'2-digit',month:'short'});};
+    var range=fmt(ws)+' – '+fmt(we);
+    var tasks='',wDone=0;
+    s.tasks.forEach(function(t,i){
+      var id=taskId(s.n,i),ck=localStorage.getItem(id)==='1';
+      if(ck)wDone++;
+      var priCls=t.p==='a'?'pri pri-a':t.p==='m'?'pri pri-m':'pri pri-b';
+      var priLbl=t.p==='a'?'ALTA':t.p==='m'?'MÉDIA':'BAIXA';
+      tasks+='<li class="task'+(ck?' done':'')+'"><input type="checkbox" id="'+id+'" '+(ck?'checked':'')+' onchange="saveTask(\''+id+'\','+s.tasks.length+','+s.n+')"><label for="'+id+'">'+t.t+'</label><span class="'+priCls+'">'+priLbl+'</span></li>';
+    });
+    var wPct=s.tasks.length?Math.round(wDone/s.tasks.length*100):0;
+    html+='<div class="'+cls+'" id="wk'+s.n+'">'
+      +'<div class="wk-hdr" onclick="toggleWk(\'wk'+s.n+'\')">'
+      +'<div class="wk-num">'+s.n+'</div>'
+      +'<div class="wk-info"><div class="wk-title">'+s.titulo+'</div><div class="wk-foco">'+range+' · '+s.foco+'</div></div>'
+      +'<div class="wk-meta">'+tag+'<span class="wk-arrow">▼</span></div>'
+      +'</div>'
+      +'<div class="wk-body"><ul class="task-list">'+tasks+'</ul>'
+      +'<div class="wk-prog"><div class="wk-prog-fill" style="width:'+wPct+'%" id="wkp'+s.n+'"></div></div>'
+      +'</div></div>';
+  });
+  cont.innerHTML=html;
+}
+
+function saveTask(id,nTasks,semN){
+  var el=document.getElementById(id);
+  localStorage.setItem(id,el.checked?'1':'0');
+  el.closest('.task')?.classList.toggle('done',el.checked);
+  var done=0,sem=SEMANAS.find(function(s){return s.n===semN;});
+  if(sem){sem.tasks.forEach(function(_,i){if(localStorage.getItem(taskId(semN,i))==='1')done++;});}
+  var pct=nTasks?Math.round(done/nTasks*100):0;
+  var bar=document.getElementById('wkp'+semN);if(bar)bar.style.width=pct+'%';
+  renderIndicadores();
+  showToast(el.checked?'✓ Tarefa concluída':'↩ Tarefa desmarcada');
+  syncRanking();
+}
+
+function toggleWk(id){document.getElementById(id)?.classList.toggle('open');}
+
+// ── INIT ──────────────────────────────────────────────
+updateAll();
+setInterval(updateAll,3600000);
+renderSemanas();
+renderIndicadores();
+document.addEventListener('DOMContentLoaded',function(){
+  _firstVisit();
+  _initStudyTimer();
+  _checkPendingExamTimer();
+});
+
+function _initStudyTimer(){
+  var start=localStorage.getItem('eerStStart');
+  if(start){
+    _stRunning=true;
+    _stInt=setInterval(_updateStDisplay,1000);
+    document.getElementById('stBtnGo').textContent='⏸ Pausar';
+  }
+  _updateStDisplay();
+  var h=parseFloat(localStorage.getItem('eerStudyHours')||0);
+  var el=document.getElementById('stTotalHours');if(el)el.textContent=h.toFixed(1)+' h';
+}
+
+function _checkPendingExamTimer(){
+  var endAt=parseInt(localStorage.getItem('eerTEndAt')||0);
+  if(!endAt)return;
+  var remaining=Math.ceil((endAt-Date.now())/1000);
+  if(remaining<=0){localStorage.removeItem('eerTEndAt');showToast('⏰ Timer de prova expirou');return;}
+  _tPDF=localStorage.getItem('eerTPDF')||'';
+  _tProvaAno=localStorage.getItem('eerTProva')||'';
+  _tSecs=remaining;
+  document.getElementById('tExamTitle').textContent='EEAR CFS-1 '+_tProvaAno+' — Timer retomado';
+  document.getElementById('tBtnGo').textContent='▶ Continuar';
+  document.getElementById('tLabel').textContent='Timer retomado — clique ▶ para continuar';
+  _updateTDisplay();
+  document.getElementById('moTimer').style.display='flex';
+}
+
+// ══════════════════════════════════════════════════════
+// SUPABASE CONFIG
+// Para ranking entre dispositivos, crie a tabela eear_ranking:
+//   CREATE TABLE eear_ranking (
+//     device_key text PRIMARY KEY,
+//     nome text, unidade text,
+//     tarefas int DEFAULT 0, provas int DEFAULT 0,
+//     xp int DEFAULT 0,
+//     atualizado timestamptz DEFAULT now()
+//   );
+//   ALTER TABLE eear_ranking ENABLE ROW LEVEL SECURITY;
+//   CREATE POLICY "r" ON eear_ranking FOR SELECT USING (true);
+//   CREATE POLICY "w" ON eear_ranking FOR INSERT WITH CHECK (true);
+//   CREATE POLICY "u" ON eear_ranking FOR UPDATE USING (true);
+const SB_URL = 'https://vtdsogswketobuipvhuw.supabase.co';
+const SB_KEY = 'sb_publishable_N1M8SCLg6SDbCW9pyGDT9Q_XVtkN5hN';
+// ══════════════════════════════════════════════════════
+
+// ── ALUNO ─────────────────────────────────────────────
+function _devKey(){
+  var k=localStorage.getItem('eerDK');
+  if(!k){k=Math.random().toString(36).slice(2)+Date.now().toString(36);localStorage.setItem('eerDK',k);}
+  return k;
+}
+function _getStu(){return{nome:localStorage.getItem('eerNome')||'',unidade:localStorage.getItem('eerUnidade')||''};}
+
+function saveStudent(){
+  var nome=(document.getElementById('inpNome').value||'').trim();
+  var unidade=document.getElementById('inpUnidade').value;
+  if(!nome){document.getElementById('inpNome').focus();return;}
+  if(!unidade){document.getElementById('inpUnidade').focus();return;}
+  localStorage.setItem('eerNome',nome);
+  localStorage.setItem('eerUnidade',unidade);
+  document.getElementById('moSetup').style.display='none';
+  _updateChip();
+  syncRanking();
+}
+
+function editStudent(){
+  var s=_getStu();
+  document.getElementById('inpNome').value=s.nome;
+  document.getElementById('inpUnidade').value=s.unidade;
+  document.getElementById('moSetup').style.display='flex';
+  document.getElementById('moRanking').style.display='none';
+}
+
+function _updateChip(){
+  var s=_getStu(),chip=document.getElementById('stuChip');
+  if(!chip)return;
+  if(s.nome){document.getElementById('stuChipText').textContent=s.nome+' · '+s.unidade;chip.style.display='flex';}
+}
+
+function _firstVisit(){
+  var s=_getStu();
+  if(!s.nome)document.getElementById('moSetup').style.display='flex';
+  else{_updateChip();syncRanking();}
+}
+
+// ── TIMER DE PROVA (persistente) ──────────────────────
+var _tInt=null,_tSecs=0,_tRunning=false,_tPDF='';
+
+function _tComputeSecs(){
+  var endAt=parseInt(localStorage.getItem('eerTEndAt')||0);
+  if(!endAt)return _tSecs;
+  var r=Math.ceil((endAt-Date.now())/1000);
+  return Math.max(0,r);
+}
+function timerToggle(){
+  if(_tRunning){
+    _tSecs=_tComputeSecs();
+    clearInterval(_tInt);_tInt=null;_tRunning=false;
+    localStorage.removeItem('eerTEndAt');
+    document.getElementById('tBtnGo').textContent='▶ Continuar';
+  } else {
+    _tRunning=true;
+    localStorage.setItem('eerTEndAt',(Date.now()+_tSecs*1000).toString());
+    document.getElementById('tBtnGo').textContent='⏸ Pausar';
+    document.getElementById('tLabel').textContent='Tempo disponível';
+    _tInt=setInterval(function(){
+      _tSecs=_tComputeSecs();
+      _updateTDisplay();
+      if(_tSecs<=0){clearInterval(_tInt);_tInt=null;_tRunning=false;localStorage.removeItem('eerTEndAt');document.getElementById('tLabel').textContent='⏰ Tempo esgotado!';}
+    },500);
+  }
+}
+function timerReset(){
+  clearInterval(_tInt);_tInt=null;_tRunning=false;
+  localStorage.removeItem('eerTEndAt');
+  _tSecs=5*3600;_updateTDisplay();
+  document.getElementById('tBtnGo').textContent='▶ Iniciar';
+  document.getElementById('tLabel').textContent='Tempo disponível';
+}
+function _updateTDisplay(){
+  var s=_tSecs;
+  var hh=Math.floor(s/3600).toString().padStart(2,'0');
+  var mm=Math.floor((s%3600)/60).toString().padStart(2,'0');
+  var ss=(s%60).toString().padStart(2,'0');
+  var el=document.getElementById('tDisplay');
+  if(el){el.textContent=hh+':'+mm+':'+ss;el.className='t-num'+(s<300&&s>0?' t-warn':'');}
+}
+function timerOpenPDF(){if(_tPDF)window.open('./'+encodeURIComponent(_tPDF),'_blank');}
+function timerDone(){
+  clearInterval(_tInt);_tInt=null;_tRunning=false;
+  localStorage.removeItem('eerTEndAt');
+  document.getElementById('moTimer').style.display='none';
+  // open questões modal
+  document.getElementById('inpAcertos').value='';
+  document.getElementById('inpAcertos').max=QUESTOES_POR_PROVA;
+  document.getElementById('inpAcertosTotal').textContent=QUESTOES_POR_PROVA;
+  document.getElementById('moQSub').textContent='EEAR CFS-1 '+(_tProvaAno||'')+' — '+QUESTOES_POR_PROVA+' questões no total';
+  document.getElementById('moQResult').innerHTML='';
+  document.getElementById('moQuestoes').style.display='flex';
+}
+function closeTimer(){
+  clearInterval(_tInt);_tInt=null;_tRunning=false;
+  localStorage.removeItem('eerTEndAt');
+  document.getElementById('moTimer').style.display='none';
+}
+
+// ── QUESTÕES / ACERTOS ────────────────────────────────
+function calcAcertosLive(){
+  var v=parseInt(document.getElementById('inpAcertos').value)||0;
+  var t=QUESTOES_POR_PROVA, pct=Math.round(v/t*100);
+  var ok=pct>=META_PCT;
+  var el=document.getElementById('moQResult');
+  el.style.background=ok?'#d1fae5':'#fee2e2';
+  el.innerHTML='<span style="color:'+(ok?'var(--green)':'var(--red)');
+  el.innerHTML+='">'+v+' / '+t+' — '+pct+'% &nbsp;'+(ok?'✅ Meta atingida!':'❌ Abaixo de '+META_PCT+'% — revisar pontos fracos')+'</span>';
+}
+function saveQuestoes(){
+  var v=parseInt(document.getElementById('inpAcertos').value)||0;
+  var ano=_tProvaAno;
+  if(ano){
+    localStorage.setItem('eerProva_'+ano+'_acertos',v);
+    localStorage.setItem('eerProva_'+ano+'_total',QUESTOES_POR_PROVA);
+    localStorage.setItem('eerProva_'+ano+'_done','1');
+  }
+  _finalizarProva();
+}
+function skipQuestoes(){
+  if(_tProvaAno) localStorage.setItem('eerProva_'+_tProvaAno+'_done','1');
+  _finalizarProva();
+}
+function _finalizarProva(){
+  document.getElementById('moQuestoes').style.display='none';
+  var n=(parseInt(localStorage.getItem('eerProvas'))||0)+1;
+  localStorage.setItem('eerProvas',n);
+  renderProvaCards();
+  renderQuestoesGrid();
+  renderIndicadores();
+  renderPostoCard();
+  showToast('✓ Prova registrada! +50 XP');
+  syncRanking();
+}
+
+// ── PROVAS DINÂMICAS ─────────────────────────────────
+function renderProvaCards(){
+  var html='';
+  PROVAS_LIST.forEach(function(p){
+    var done=localStorage.getItem('eerProva_'+p.ano+'_done')==='1';
+    var aStr=localStorage.getItem('eerProva_'+p.ano+'_acertos');
+    var badge='';
+    if(done&&aStr!==null){
+      var a=parseInt(aStr),t=QUESTOES_POR_PROVA,pct=Math.round(a/t*100),ok=pct>=META_PCT;
+      badge='<div style="font-size:12px;font-weight:700;padding:4px 10px;border-radius:8px;margin-bottom:8px;background:'+(ok?'#d1fae5':'#fee2e2')+';color:'+(ok?'var(--green)':'var(--red)');
+      badge+='">'+(ok?'✅':'❌')+' '+a+'/'+t+' · '+pct+'% '+(ok?'— Meta atingida!':'— Abaixo de '+META_PCT+'%')+'</div>';
+    } else if(done){
+      badge='<div style="font-size:12px;font-weight:700;color:var(--teal);margin-bottom:8px">✓ Prova resolvida</div>';
+    }
+    html+='<div class="prova-card"><div class="prova-year">'+p.ano+(p.badge?' <span class="prova-badge">'+p.badge+'</span>':'')+'</div>'
+      +badge
+      +'<div class="prova-btns"><button class="prova-btn btn-un" onclick="pdf(\''+p.file.replace(/'/g,"\\'")+"','"+p.ano+"')\">"
+      +'📄 CFS-1 '+p.ano+' — Prova Completa</button></div></div>';
+  });
+  var el=document.getElementById('provasGrid');if(el)el.innerHTML=html;
+}
+
+function countQuestoes(){
+  var resolvidas=0,acertadas=0,aprovadas=0;
+  PROVAS_LIST.forEach(function(p){
+    if(localStorage.getItem('eerProva_'+p.ano+'_done')==='1'){
+      var t=QUESTOES_POR_PROVA;
+      var a=parseInt(localStorage.getItem('eerProva_'+p.ano+'_acertos')||0);
+      resolvidas+=t; acertadas+=a;
+      if(Math.round(a/t*100)>=META_PCT)aprovadas++;
+    }
+  });
+  return{resolvidas,acertadas,aprovadas,
+    pct:resolvidas?Math.round(acertadas/resolvidas*100):0};
+}
+
+function renderQuestoesGrid(){
+  var q=countQuestoes();
+  var pctQ=Math.round(q.resolvidas/TOTAL_QUESTOES*100);
+  var ok=q.pct>=META_PCT&&q.resolvidas>0;
+  var el=document.getElementById('questoesGrid');if(!el)return;
+  el.innerHTML=
+    '<div class="ind-item"><div class="ind-num">'+q.resolvidas+'<span style="font-size:16px;font-weight:600">/'+TOTAL_QUESTOES+'</span></div>'
+   +'<div class="ind-lbl">Questões Feitas</div><div class="ind-sub">Meta: '+TOTAL_QUESTOES+' questões</div>'
+   +'<div class="ind-prog"><div class="ind-prog-fill" style="width:'+pctQ+'%"></div></div></div>'
+   +'<div class="ind-item"><div class="ind-num" style="'+(ok?'color:var(--green)':q.resolvidas?'color:var(--red)':'')+'">'+(q.resolvidas?q.pct+'%':'—')+'</div>'
+   +'<div class="ind-lbl">Aproveitamento</div><div class="ind-sub">Meta: mínimo '+META_PCT+'%</div></div>'
+   +'<div class="ind-item"><div class="ind-num">'+q.aprovadas+'<span style="font-size:16px;font-weight:600">/'+PROVAS_LIST.length+'</span></div>'
+   +'<div class="ind-lbl">Provas ≥ 80%</div><div class="ind-sub">acima da meta</div></div>';
+}
+
+// ── RANKING ───────────────────────────────────────────
+function openRanking(){document.getElementById('moRanking').style.display='flex';loadRanking();}
+function closeRanking(){document.getElementById('moRanking').style.display='none';}
+
+async function syncRanking(){
+  if(!SB_URL||!SB_KEY)return;
+  var s=_getStu();if(!s.nome)return;
+  var c=countTasks(),provas=parseInt(localStorage.getItem('eerProvas'))||0;
+  try{
+    await fetch(SB_URL+'/rest/v1/eear_ranking',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY,'Prefer':'resolution=merge-duplicates'},
+      body:JSON.stringify({device_key:_devKey(),nome:s.nome,unidade:s.unidade,tarefas:c.done,provas,xp:calcXP(),atualizado:new Date().toISOString()})
+    });
+  }catch(e){}
+}
+
+async function loadRanking(){
+  var cont=document.getElementById('rkContent');
+  if(!SB_URL||!SB_KEY){_renderLocalRk(cont);return;}
+  cont.innerHTML='<div class="rk-empty">Carregando...</div>';
+  try{
+    var r=await fetch(SB_URL+'/rest/v1/eear_ranking?select=*&order=xp.desc&limit=50',{headers:{'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY}});
+    _renderRk(await r.json(),cont);
+  }catch(e){_renderLocalRk(cont);}
+}
+
+function _renderRk(data,cont){
+  if(!data||!data.length){cont.innerHTML='<div class="rk-empty">Nenhum participante ainda.<br>Complete tarefas e provas para aparecer aqui!</div>';return;}
+  var myKey=_devKey(),medals=['🥇','🥈','🥉'];
+  var maxXP=Math.max(1,data[0]?.xp||1);
+  var html='<div style="overflow-x:auto"><table class="rk-table"><thead><tr><th>#</th><th>Nome</th><th>Posto</th><th>Unidade</th><th>XP</th></tr></thead><tbody>';
+  data.forEach(function(r,i){
+    var isMe=r.device_key===myKey,xp=r.xp||0,pct=Math.round((xp/maxXP)*100);
+    var posto='—';try{posto=RANKS[getRankIdx(xp)].posto;}catch(_){}
+    html+='<tr class="'+(isMe?'rk-me':'')+'"><td>'+(medals[i]||(i+1))+'</td>'
+      +'<td>'+r.nome+(isMe?' <small style="color:var(--teal)">(você)</small>':'')+'</td>'
+      +'<td style="font-size:11px;color:var(--teal);font-weight:700">'+posto+'</td>'
+      +'<td>'+r.unidade+'</td>'
+      +'<td><b>'+xp+'</b><div class="rk-prog"><div class="rk-prog-bar" style="width:'+pct+'%"></div></div></td></tr>';
+  });
+  cont.innerHTML=html+'</tbody></table></div>';
+}
+
+function _renderLocalRk(cont){
+  var s=_getStu(),c=countTasks(),provas=parseInt(localStorage.getItem('eerProvas'))||0;
+  var pct=c.total?Math.round(c.done/c.total*100):0;
+  if(!s.nome){cont.innerHTML='<div class="rk-empty">Insira seu nome para participar do ranking.</div>';return;}
+  cont.innerHTML='<div style="text-align:center;padding:16px 0 8px"><div style="font-size:36px;margin-bottom:8px">🏅</div><div style="font-size:18px;font-weight:900;color:var(--navy)">'+s.nome+'</div><div style="font-size:13px;color:var(--t3);margin-bottom:20px">'+s.unidade+'</div><div style="display:flex;justify-content:center;gap:36px"><div style="text-align:center"><div style="font-size:38px;font-weight:900;color:var(--teal)">'+c.done+'</div><div style="font-size:11px;color:var(--t3);text-transform:uppercase;letter-spacing:.6px">Tarefas feitas</div></div><div style="text-align:center"><div style="font-size:38px;font-weight:900;color:var(--navy)">'+provas+'</div><div style="font-size:11px;color:var(--t3);text-transform:uppercase;letter-spacing:.6px">Provas feitas</div></div><div style="text-align:center"><div style="font-size:38px;font-weight:900;color:var(--lime)">'+pct+'%</div><div style="font-size:11px;color:var(--t3);text-transform:uppercase;letter-spacing:.6px">Progresso</div></div></div></div><div class="rk-note">Para ver o ranking de <b>todos os alunos</b>, configure o Supabase (crie a tabela <code>eear_ranking</code> conforme as instruções no HTML).</div>';
+}
+</script>
+
+<script>
+// ── RANKS EEAR ────────────────────────────────────────
+const RANKS = [
+  {xp:0,    posto:'Aluno da EEAR',              cat:'CANDIDATO'},
+  {xp:200,  posto:'3º Sargento (formação EEAR)',cat:'PRAÇAS'},
+  {xp:600,  posto:'2º Sargento',                cat:'PRAÇAS'},
+  {xp:1100, posto:'1º Sargento',                cat:'PRAÇAS'},
+  {xp:1800, posto:'Suboficial',                 cat:'PRAÇAS'},
+];
+
+// ── CURRÍCULO EEAR ────────────────────────────────────
+const EEAR_CURR = [
+  {subj:'📖 Língua Portuguesa',items:[
+    'Interpretação de textos literários',
+    'Interpretação de textos não-literários (artigos, notícias)',
+    'Interpretação de textos mistos (charges e propagandas)',
+    'Fonética e Fonologia: fonemas e encontros vocálicos',
+    'Morfologia: estrutura e formação de palavras',
+    'Classes de Palavras: substantivo, adjetivo, verbo, etc.',
+    'Pontuação: regras e aplicações',
+    'Sintaxe: frase, oração e período',
+    'Orações Coordenadas (assindéticas e sindéticas)',
+    'Orações Subordinadas (substantivas, adjetivas, adverbiais)',
+    'Concordância Verbal',
+    'Concordância Nominal',
+    'Regência Verbal e Nominal',
+    'Crase: regras e exceções',
+    'Colocação Pronominal',
+    'Tipos de Discurso (direto, indireto e indireto livre)',
+    'Figuras de Linguagem: metáfora, antítese, hipérbole, ironia, personificação',
+    'Semântica: sinônimos e antônimos',
+    'Semântica: homônimos e parônimos',
+  ]},
+  {subj:'📐 Matemática',items:[
+    'Função do 1º grau (linear): propriedades e gráfico',
+    'Função do 2º grau (quadrática): vértice, concavidade e gráfico',
+    'Função modular',
+    'Função exponencial',
+    'Função logarítmica',
+    'Equações e inequações do 1º e 2º grau',
+    'Sistemas de equações',
+    'Progressão Aritmética (PA)',
+    'Progressão Geométrica (PG)',
+    'Geometria Plana: áreas e perímetros',
+    'Trigonometria: seno, cosseno, tangente (triângulo e geral)',
+    'Matrizes: operações e tipos',
+    'Determinantes e Regra de Cramer',
+    'Sistemas Lineares (método de Gauss)',
+    'Análise Combinatória: arranjos, combinações e permutações',
+    'Probabilidade',
+    'Estatística: média, moda, mediana e desvio padrão',
+    'Geometria Espacial: prismas e pirâmide (áreas e volumes)',
+    'Geometria Espacial: cilindro, cone e esfera',
+    'Geometria Analítica: elipse',
+    'Geometria Analítica: hipérbole',
+    'Números Complexos',
+    'Polinômios e equações polinomiais',
+  ]},
+  {subj:'⚡ Física',items:[
+    'Notação científica e ordem de grandeza',
+    'Sistema Internacional de Unidades (SI)',
+    'Grandezas vetoriais e escalares',
+    'Composição e decomposição de vetores',
+    'Cinemática: MU e MUV (funções horárias e gráficos)',
+    'Cinemática: movimento vertical e lançamento de projéteis',
+    'Cinemática: movimentos circulares',
+    'Dinâmica: Leis de Newton',
+    'Trabalho, energia e conservação da energia mecânica',
+    'Estática: equilíbrio e torque',
+    'Hidrostática: pressão e Princípio de Arquimedes',
+    'Termologia: temperatura e calor',
+    'Termologia: dilatação dos corpos',
+    'Termodinâmica: 1ª Lei e máquinas térmicas',
+    'Termodinâmica: 2ª Lei e ciclo de Carnot',
+    'Gravitação: Lei de Newton e satélites',
+    'Eletrostática: cargas e Lei de Coulomb',
+    'Eletrodinâmica: corrente elétrica e resistência',
+    'Leis de Ohm e associação de resistores',
+    'Potência elétrica e Efeito Joule',
+    'Eletromagnetismo: campo magnético e indução',
+    'Ondulatória: classificação e variáveis',
+    'Óptica Geométrica: reflexão, refração, espelhos e lentes',
+    'Matéria e Radiação',
+  ]},
+  {subj:'🌐 Inglês',items:[
+    'Compreensão de Textos: vocabulário geral, artigos, notícias e diálogos',
+    'Artigos definidos e indefinidos',
+    'Substantivos: plural, countable e uncountable',
+    'Adjetivos: comparativo e superlativo',
+    'Pronomes: pessoal, possessivo, demonstrativo, reflexivo',
+    'Advérbios',
+    'Simple Present e Present Continuous',
+    'Simple Past e Past Continuous',
+    'Simple, Progressive e Perfect Tenses (Present, Past e Future)',
+    'Future: will e going to',
+    'Modal Verbs: Can, Could, May, Must, Should (todos)',
+    'Infinitive vs. Gerund',
+    'Preposições, Conjunções e Discourse Markers',
+    'Quantifiers: much, many, some, any',
+    'Conditional Sentences (Zero, 1st, 2nd e 3rd)',
+    'Active/Passive Voice',
+    'Direct/Indirect Speech (Reported Speech)',
+    'Phrasal Verbs e Idioms',
+    'Relative Clauses',
+    'Question Tags e Tag Answers',
+    'Prefixos e sufixos (Word Formation)',
+    'False Friends (falsos cognatos)',
+  ]},
+];
+
+// ── CRONÔMETRO DE ESTUDOS (persistente) ───────────────
+var _stInt=null,_stRunning=false;
+
+function _stGetSecs(){
+  var base=parseInt(localStorage.getItem('eerStBase')||0);
+  var start=localStorage.getItem('eerStStart');
+  if(start)return base+Math.floor((Date.now()-parseInt(start))/1000);
+  return base;
+}
+function stToggle(){
+  if(_stRunning){
+    var cur=_stGetSecs();
+    localStorage.setItem('eerStBase',cur);
+    localStorage.removeItem('eerStStart');
+    clearInterval(_stInt);_stInt=null;_stRunning=false;
+    document.getElementById('stBtnGo').textContent='▶ Continuar';
+  } else {
+    localStorage.setItem('eerStStart',Date.now().toString());
+    _stRunning=true;
+    document.getElementById('stBtnGo').textContent='⏸ Pausar';
+    _stInt=setInterval(_updateStDisplay,1000);
+  }
+}
+function stReset(){
+  clearInterval(_stInt);_stInt=null;_stRunning=false;
+  localStorage.removeItem('eerStStart');
+  localStorage.setItem('eerStBase','0');
+  _updateStDisplay();
+  document.getElementById('stBtnGo').textContent='▶ Iniciar';
+}
+function _updateStDisplay(){
+  var s=_stGetSecs();
+  var hh=Math.floor(s/3600).toString().padStart(2,'0');
+  var mm=Math.floor((s%3600)/60).toString().padStart(2,'0');
+  var ss=(s%60).toString().padStart(2,'0');
+  var el=document.getElementById('stDisplay');if(el)el.textContent=hh+':'+mm+':'+ss;
+}
+function stSave(){
+  if(_stGetSecs()===0){showToast('⚠️ Inicie o cronômetro antes de salvar');return;}
+  document.getElementById('moStudySubj').style.display='flex';
+}
+function stSaveConfirm(subj){
+  document.getElementById('moStudySubj').style.display='none';
+  var h=_stGetSecs()/3600;
+  var prev=parseFloat(localStorage.getItem('eerStudyHours')||0);
+  var total=prev+h;
+  localStorage.setItem('eerStudyHours',total.toFixed(2));
+  var bySubj=JSON.parse(localStorage.getItem('eerStudyBySubj')||'{}');
+  bySubj[subj]=(bySubj[subj]||0)+h;
+  localStorage.setItem('eerStudyBySubj',JSON.stringify(bySubj));
+  var xpGanho=(Math.floor(total)-Math.floor(prev))*20;
+  stReset();
+  var el=document.getElementById('stTotalHours');if(el)el.textContent=total.toFixed(1)+' h';
+  renderPostoCard();renderMetas();
+  showToast(xpGanho>0?'✓ +'+xpGanho+' XP · '+subj:'✓ '+subj+' salvo!');
+  syncRanking();
+}
+
+// ── XP & POSTO ────────────────────────────────────────
+function calcXP(){
+  var c=countTasks(),provas=parseInt(localStorage.getItem('eerProvas')||0);
+  var horas=parseFloat(localStorage.getItem('eerStudyHours')||0);
+  var cxp=0;
+  EEAR_CURR.forEach(function(s,si){
+    s.items.forEach(function(_,ii){if(localStorage.getItem('ee_'+si+'_'+ii)==='1')cxp+=15;});
+  });
+  var numSem=SEMANAS.length;
+  for(var s=1;s<=numSem;s++){
+    var meta=META_SEMANAL[s];if(!meta)continue;
+    for(var i=0;i<meta.foco.length;i++){if(localStorage.getItem('meta_s'+s+'_'+i)==='1')cxp+=20;}
+  }
+  return c.done*10+provas*50+Math.floor(horas)*20+cxp;
+}
+function getRankIdx(xp){var i=0;RANKS.forEach(function(r,j){if(xp>=r.xp)i=j;});return i;}
+
+function renderPostoCard(){
+  var xp=calcXP(),i=getRankIdx(xp),r=RANKS[i],nx=RANKS[i+1];
+  var pct=nx?Math.round((xp-r.xp)/(nx.xp-r.xp)*100):100;
+  var c=countTasks(),p=parseInt(localStorage.getItem('eerProvas')||0),h=parseFloat(localStorage.getItem('eerStudyHours')||0);
+  var el=document.getElementById('postoCard');if(!el)return;
+  el.innerHTML='<div class="posto-card"><div class="posto-inner">'
+    +'<div class="posto-cat">✈️ FAB — '+r.cat+'</div>'
+    +'<div class="posto-nome">'+r.posto+'</div>'
+    +'<div class="posto-xp-row"><span class="posto-xp-val">'+xp+' XP</span><span class="posto-xp-val">'+(nx?'próximo: '+nx.xp+' XP':'🏆 Posto máximo!')+'</span></div>'
+    +'<div class="posto-xp-bar"><div class="posto-xp-fill" style="width:'+pct+'%"></div></div>'
+    +'<div class="posto-xp-next">'+(nx?'▶ '+r.posto+' → '+nx.posto:'')+'</div>'
+    +'<div class="posto-badges">'
+    +'<div class="posto-badge"><div class="posto-badge-num">'+xp+'</div><div class="posto-badge-lbl">XP Total</div></div>'
+    +'<div class="posto-badge"><div class="posto-badge-num">'+c.done+'</div><div class="posto-badge-lbl">Tarefas</div></div>'
+    +'<div class="posto-badge"><div class="posto-badge-num">'+p+'</div><div class="posto-badge-lbl">Provas</div></div>'
+    +'<div class="posto-badge"><div class="posto-badge-num">'+Math.floor(h)+'</div><div class="posto-badge-lbl">Horas</div></div>'
+    +'<div class="posto-badge"><div class="posto-badge-num">'+(i+1)+'/'+RANKS.length+'</div><div class="posto-badge-lbl">Posto</div></div>'
+    +'</div></div></div>';
+}
+
+function renderRankTable(){
+  var xp=calcXP(),ci=getRankIdx(xp);
+  var prev='',html='<div style="overflow-x:auto"><table class="rk-posto-table"><thead><tr><th>✈️ Posto — FAB/EEAR</th><th>XP Necessário</th></tr></thead><tbody>';
+  RANKS.forEach(function(r,i){
+    if(r.cat!==prev){html+='<tr class="rk-cat"><td colspan="2">🔹 '+r.cat+'</td></tr>';prev=r.cat;}
+    html+='<tr class="'+(i===ci?'rk-cur':'')+'"><td>'+r.posto+(i===ci?' ◀ você':i<ci?' ✓':'')+'</td><td>'+(r.xp===0?'Início':r.xp+' XP')+'</td></tr>';
+  });
+  var el=document.getElementById('rankTableContent');if(el)el.innerHTML=html+'</tbody></table></div>';
+}
+
+function renderCurriculum(data,pfx,cid){
+  var html='';
+  data.forEach(function(s,si){
+    var done=0,items='';
+    s.items.forEach(function(item,ii){
+      var id=pfx+'_'+si+'_'+ii,ck=localStorage.getItem(id)==='1';
+      if(ck)done++;
+      items+='<li class="curr-item'+(ck?' done':'')+'"><input type="checkbox" id="'+id+'" '+(ck?'checked':'')+' onchange="saveCurr(\''+id+'\',\''+pfx+'\','+si+','+s.items.length+')"><label for="'+id+'">'+item+'</label><span class="xp-pill">+15 XP</span></li>';
+    });
+    var pct=s.items.length?Math.round(done/s.items.length*100):0;
+    html+='<div class="curr-subj" id="'+pfx+'_s'+si+'"><div class="curr-subj-hdr" onclick="document.getElementById(\''+pfx+'_s'+si+'\').classList.toggle(\'open\')"><span class="curr-subj-title">'+s.subj+'</span><span class="curr-subj-prog" id="'+pfx+'_prog'+si+'">'+done+'/'+s.items.length+' · '+pct+'%</span><span class="curr-subj-arrow">▼</span></div><div class="curr-subj-body"><ul class="curr-items">'+items+'</ul></div></div>';
+  });
+  var el=document.getElementById(cid);if(el)el.innerHTML=html;
+}
+
+function saveCurr(id,pfx,si,total){
+  var el=document.getElementById(id);
+  localStorage.setItem(id,el.checked?'1':'0');
+  el.closest('.curr-item')?.classList.toggle('done',el.checked);
+  var done=0;
+  for(var ii=0;ii<total;ii++){if(localStorage.getItem(pfx+'_'+si+'_'+ii)==='1')done++;}
+  var pct=total?Math.round(done/total*100):0;
+  var prog=document.getElementById(pfx+'_prog'+si);if(prog)prog.textContent=done+'/'+total+' · '+pct+'%';
+  renderPostoCard();renderRankTable();
+  showToast(el.checked?'✓ Tópico dominado! +15 XP':'↩ Tópico desmarcado');
+}
+
+// ── METAS SEMANAIS ────────────────────────────────────
+const META_SEMANAL = {
+  3:{horas:15,foco:[
+    '📖 Português: Resolver prova 2025 completa — catalogar erros por tópico',
+    '📖 Português: Revisar Sintaxe (orações coord. e subord.) e Concordância',
+    '📖 Português: Revisar Interpretação de Textos e Figuras de Linguagem',
+    '📐 Matemática: Identificar pontos fracos na prova 2025 — listar tópicos',
+    '⚡ Física: Revisar Cinemática (MU, MUV, lançamento) e Dinâmica',
+    '⚡ Física: Revisar Estática e Hidrostática',
+    '🌐 Inglês: Revisar tempos verbais simples e compreensão de texto',
+  ]},
+  2:{horas:20,foco:[
+    '📖 Português: Revisar Regência, Crase, Colocação Pronominal e Morfologia',
+    '📐 Matemática: Resolver provas 2024 e 2023 — funções e geometria espacial',
+    '📐 Matemática: Revisar Geometria Analítica (Elipse e Hipérbole) e Comb/Prob',
+    '⚡ Física: Revisar Eletrostática, Eletrodinâmica e circuitos elétricos',
+    '⚡ Física: Revisar Termodinâmica (máquinas térmicas e 2ª Lei)',
+    '🌐 Inglês: Revisar Modal Verbs, Phrasal Verbs e Question Tags',
+    '🛫 Inglês BCT: Revisar Conditionals (0, 1º, 2º, 3º) e Passive Voice',
+  ]},
+  1:{horas:10,foco:[
+    '📖 Português: Revisão final — tópicos com maior índice de erro',
+    '📐 Matemática: Montar ficha completa de fórmulas (folha A4)',
+    '⚡ Física: Revisar Ondulatória, Óptica e Matéria e Radiação',
+    '🌐 Inglês: Revisão final — False Friends e Reported Speech (BCT)',
+    '✈️ Resolver provas 2022 e 2021 — foco nos pontos fracos',
+    '📦 Confirmar local, horário e documentos da prova EEAR',
+    '😴 Dormir às 21h na véspera — mínimo 8h de sono',
+  ]},
+};
+
+function renderMetas(){
+  var semAtual=Math.min(3,Math.max(1,semanasRest()));
+  var meta=META_SEMANAL[semAtual]||{horas:10,foco:[]};
+  var totalHoras=parseFloat(localStorage.getItem('eerStudyHours')||0);
+  var c=countTasks(),semDec=3-semAtual;
+  var horasAcumMeta=(semDec+1)*meta.horas;
+  var pctH=horasAcumMeta>0?Math.min(100,Math.round(totalHoras/horasAcumMeta*100)):0;
+  var pctT=c.total?Math.round(c.done/c.total*100):0;
+  var focoItems=meta.foco.map(function(f,ii){
+    var mid='meta_s'+semAtual+'_'+ii,ck=localStorage.getItem(mid)==='1';
+    return '<li style="display:flex;gap:8px;align-items:flex-start;margin-bottom:7px">'
+      +'<input type="checkbox" id="'+mid+'" '+(ck?'checked':'')+' style="width:16px;height:16px;accent-color:var(--teal);flex-shrink:0;margin-top:2px;cursor:pointer" onchange="saveMeta(\''+mid+'\')">'
+      +'<label for="'+mid+'" style="flex:1;font-size:12.5px;cursor:pointer;line-height:1.5'+(ck?';text-decoration:line-through;color:var(--t3)':';color:var(--t2)')+'">'+(ck?'<s style="color:var(--t3)">'+f+'</s>':f)+'</label>'
+      +'<span class="xp-pill">+20</span></li>';
+  }).join('');
+  var el=document.getElementById('metasContainer');if(!el)return;
+  el.innerHTML='<div class="ind-grid" style="margin-bottom:16px">'
+    +'<div class="ind-item"><div class="ind-num">'+meta.horas+'h</div><div class="ind-lbl">Meta desta semana</div><div class="ind-sub">Semana '+semAtual+' de 3</div></div>'
+    +'<div class="ind-item"><div class="ind-num">'+totalHoras.toFixed(1)+'h</div><div class="ind-lbl">Total estudado</div><div class="ind-sub">acumulado</div><div class="ind-prog"><div class="ind-prog-fill" style="width:'+pctH+'%"></div></div></div>'
+    +'<div class="ind-item"><div class="ind-num">'+c.done+'/'+c.total+'</div><div class="ind-lbl">Tarefas feitas</div><div class="ind-sub">'+pctT+'% do plano</div><div class="ind-prog"><div class="ind-prog-fill" style="width:'+pctT+'%"></div></div></div>'
+    +'</div>'
+    +'<div style="font-size:11px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.8px;margin-bottom:9px">🎯 Foco desta semana</div>'
+    +'<ul style="list-style:none">'+focoItems+'</ul>';
+}
+
+function saveMeta(id){
+  var el=document.getElementById(id);
+  localStorage.setItem(id,el.checked?'1':'0');
+  renderMetas();renderPostoCard();renderRankTable();
+  showToast(el.checked?'✓ Meta concluída! +20 XP':'↩ Meta desmarcada');
+  syncRanking();
+}
+
+// ── RANKING TAB ───────────────────────────────────────
+async function loadRankingTab(){
+  var cont=document.getElementById('rkTabContent');if(!cont)return;
+  if(!SB_URL||!SB_KEY){cont.innerHTML='<div class="rk-empty">Conecte o Supabase para ver o ranking de todos os alunos.</div>';return;}
+  cont.innerHTML='<div class="rk-empty">Carregando...</div>';
+  try{
+    var r=await fetch(SB_URL+'/rest/v1/eear_ranking?select=*&order=xp.desc&limit=50',{headers:{'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY}});
+    _renderRk(await r.json(),cont);
+  }catch(e){cont.innerHTML='<div class="rk-empty">Erro ao carregar. Verifique a conexão.</div>';}
+}
+
+async function initRankingTab(){
+  renderPostoCard();renderRankTable();
+  var h=parseFloat(localStorage.getItem('eerStudyHours')||0);
+  var el=document.getElementById('stTotalHours');if(el)el.textContent=h.toFixed(1)+' h';
+  _updateStDisplay();
+  await syncRanking();
+  loadRankingTab();
+}
+
+document.addEventListener('DOMContentLoaded',function(){renderMetas();renderIndicadores();});
+</script>
+</body>
+</html>
